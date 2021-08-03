@@ -22,19 +22,9 @@ sudo apt-get install \
 chsh -s /usr/bin/zsh hunjong;
 sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
 
-#Docekr 
+#Docker 
 git clone https://github.com/docker/docker-install.git;
 curl -fsSL https://get.docker.com -o get-docker.sh;
 sh get-docker.sh;
 rm -rf ../docker-install;
 
-#Zsh
-echo alias cl='clear' && echo alias tm='tmux'
-
-#Anaconda
-if [ ! -d ~/Downloads ]; then
-    mkdir ~/Downloads
-fi
-cd ~/Downloads;
-wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh;
-source ~/.zshrc;
