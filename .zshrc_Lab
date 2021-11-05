@@ -100,25 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias tm='tmux'
-alias cl='clear'
-alias lt='ls -lt'
-alias la='ls -al'
-alias ta='tmux attach'
-alias td='tmux detach'
+alias la="ls -al"
+alias lt="ls -alt"
+alias ta="tmux attach"
+alias td="tmux detach"
+alias cl="clear"
 
-# PATH Configuration
-export Desktop=/mnt/c/Users/Novel/Desktop
-
-# ECHO Settings
-echo "# PATH Information"
-echo "Desktop = $Desktop"
-echo "\n"
-echo "# Alias Information"
-echo "tm = tmux"
-echo "cl = clear"
-echo "lt = ls -lt"
-echo "la = ls -al"
-echo "ta = tmux attach"
-echo "td = tmux detach"
-
+cd

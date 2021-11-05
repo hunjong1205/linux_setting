@@ -114,9 +114,11 @@ unset __conda_setup
 # <<< conda initialize <<<
 alias tm='tmux'
 alias cl='clear'
-alias mvim='mvim -v'
+# alias mvim='mvim -v'
 alias lt='ls -lt'
 alias la='ls -al'
+alias ta='tmux attach'
+alias td='tmux detach'
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"

@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-Plugin 'nanotech/jellybeans.vim'
+" Plugin 'nanotech/jellybeans.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -13,23 +13,23 @@ Plugin 'airblade/vim-gitgutter' " vim with git status(added, modified, and remov
 Plugin 'tpope/vim-fugitive' " vim with git command(e.g., Gdiff)
 Plugin 'vim-airline/vim-airline' " vim status bar
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'blueyed/vim-diminactive'
+" Plugin 'blueyed/vim-diminactive'
 
 call vundle#end()
 
-call plug#begin('~/.vim/autoload/plug')
+"call plug#begin('~/.vim/autoload/plug')
 
-Plug 'pgavlin/pulumi.vim'
+"Plug 'pgavlin/pulumi.vim'
 
-call plug#end()
+"call plug#end()
 
 set t_Co=256
 
 " for jellybeans
 " colorscheme desert
- set background=dark
+set background=dark
 " colorscheme jellybeans
-colorscheme pulumi
+" colorscheme pulumi
 " for taglist
 nmap <F8> :Tagbar<CR>
 
@@ -50,13 +50,25 @@ nnoremap <C><PageUp> :bp<CR>
 nnoremap <C><PageDown> :bn<CR>
 
 " for blueyed/vim-diminactive
-let g:diminactive_enable_focus = 1
+" let g:diminactive_enable_focus = 0
 
 " for NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
 syntax enable
 filetype indent on
+
+" Vim Settings
+set rnu
+set ts=4
+set sw=4
+set sts=4
+set hls
+set ignorecase
+set showmatch
+set wmnu
+set cursorline
+set clipboard=unnamed
+set smartindent
+set cindent
 highlight Comment term=bold cterm=bold ctermfg=4
-set nu
-set nowrap
