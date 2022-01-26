@@ -41,7 +41,7 @@ echo "Install Zsh"
 echo "***************************"
 sudo apt-get install zsh
 
-chsh -s $(which zsh) hunjong;
+chsh -s $(which zsh) hunjong
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
