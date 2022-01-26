@@ -5,7 +5,9 @@ echo /etc/hosts >> 163.152.162.75	kuserver    #Make Domain Name Service
 sudo apt-get update;
 sudo apt-get upgrade;
 
+echo "***************************"
 echo "Install Pacakge"
+echo "***************************"
 sudo apt-get install -y \
 	vim \
     tmux \
@@ -22,10 +24,14 @@ sudo apt-get install -y \
 	build-essential
 
 sudo apt-get install -y net-tools less 
+echo "***************************"
 echo "Install Package Done!"
+echo "***************************"
 
 # Install Zsh
+echo "***************************"
 echo "Install Zsh"
+echo "***************************"
 sudo apt-get install zsh
 
 chsh -s $(which zsh) hunjong;
@@ -34,11 +40,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plu
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git .oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 sed -i "10s/.*/  ZSH_THEME="agnoster"" ~/.zshrc
 sed -i "70s/.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)" ~/.zshrcw
-echo "alias tm='tmux' \n
-	alias cl='clear' \n
-	alias lt='ls -lt' \n
-	alias ta='tmux attach' \n
-	alias td='tmux detach'" >> ~/.zshrc
+echo "alias tm='tmux' 
+alias cl='clear' 
+alias lt='ls -lt'
+alias ta='tmux attach'
+alias td='tmux detach'" >> ~/.zshrc
 
 
 #Docker 
@@ -46,4 +52,10 @@ echo "alias tm='tmux' \n
 #curl -fsSL https://get.docker.com -o get-docker.sh;
 #sh get-docker.sh;
 #rm -rf ../docker-install;
+
+echo "***************************"
+echo "Configuration Initial Linux Done"
+echo "***************************"
+echo "Restart zsh"
+echo "***************************"
 
