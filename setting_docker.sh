@@ -21,6 +21,7 @@ apt-get install -y \
     tmux \
     python3 \
     python-pip \
+    cmake \
 	build-essential
 
 apt-get install -y net-tools less 
