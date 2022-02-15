@@ -54,6 +54,7 @@ alias cl='clear'
 alias lt='ls -lt'
 alias ta='tmux attach'
 alias td='tmux detach'
+
 # Auto Suggestion accpet key binding
 bindkey '!' autosuggest-accept " >> ~/.zshrc
 
@@ -70,6 +71,9 @@ vim +PluginINstall +qall
 #curl -fsSL https://get.docker.com -o get-docker.sh;
 #sh get-docker.sh;
 #rm -rf ../docker-install;
+
+#Anaconda
+cd /home/
 
 echo "***************************"
 echo "Configuration Initial Linux Done"
