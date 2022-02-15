@@ -3,8 +3,7 @@
 # Make Domain Name Service
 # echo "163.152.162.75	kuserver" >> /etc/hosts   
 
-sudo apt-get update;
-sudo apt-get upgrade;
+sudo apt-get update && sudo apt-get upgrade
 
 echo "***************************"
 echo "Install Pacakge"
@@ -46,13 +45,17 @@ chsh -s $(which zsh) hunjong
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+sudo apt-get install -y language-pack-en
+sudo update-locale
 sed -i "11s/.*/  ZSH_THEME="agnoster"/g" ~/.zshrc
 sed -i "73s/.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
 echo "alias tm='tmux' 
 alias cl='clear' 
 alias lt='ls -lt'
 alias ta='tmux attach'
-alias td='tmux detach'" >> ~/.zshrc
+alias td='tmux detach'
+# Auto Suggestion accpet key binding
+bindkey '!' autosuggest-accept " >> ~/.zshrc
 
 # Configure Vim"
 echo "***************************"

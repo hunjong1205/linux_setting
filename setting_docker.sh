@@ -43,16 +43,19 @@ apt-get install zsh
 
 chsh -s $(which zsh)
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-/usr/bin/zsh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions /root/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /root/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+apt-get install -y language-pack-en
+update-locale
 sed -i "11s/.*/  ZSH_THEME="agnoster"/g" ~/.zshrc
 sed -i "73s/.*/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/g" ~/.zshrc
 echo "alias tm='tmux' 
 alias cl='clear' 
 alias lt='ls -lt'
 alias ta='tmux attach'
-alias td='tmux detach'" >> ~/.zshrc
+alias td='tmux detach'
+# Auto Suggestion accpet key binding
+bindkey '!' autosuggest-accept " >> ~/.zshrc
 
 # Configure Vim"
 echo "***************************"
