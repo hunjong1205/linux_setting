@@ -64,7 +64,7 @@ echo "Configure Vim"
 echo "***************************"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp .vimrc ~/.vimrc
-vim +PluginINstall +qall
+vim +PluginInstall +qall
 
 #Docker 
 #git clone https://github.com/docker/docker-install.git;
