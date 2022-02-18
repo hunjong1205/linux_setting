@@ -72,9 +72,6 @@ vim +PluginInstall +qall
 #sh get-docker.sh;
 #rm -rf ../docker-install;
 
-#Anaconda
-cd /home/
-
 echo "***************************"
 echo "Configuration Initial Linux Done"
 echo "***************************"
