@@ -43,8 +43,8 @@ sudo apt-get install zsh
 
 chsh -s $(which zsh) hunjong
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions /home/$(whoami)/.oh-my-zsh/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git /home/$(whoami)/.oh-my-zsh/plugins/zsh-syntax-highlighting
 sudo apt-get install -y language-pack-en
 sudo update-locale
 sed -i "11s/.*/  ZSH_THEME="agnoster"/g" ~/.zshrc
