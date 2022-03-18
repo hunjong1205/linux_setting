@@ -31,7 +31,7 @@ set background=dark
 " colorscheme jellybeans
 " colorscheme pulumi
 " for taglist
-nmap <F8> :Tagbar<CR>
+nmap <C-m> :Tagbar<CR>
 
 " for indent guide
 let g:indentguides_spacechar = '┆'
@@ -49,11 +49,17 @@ let mapleader = ","
 nnoremap <C><PageUp> :bp<CR>
 nnoremap <C><PageDown> :bn<CR>
 
+tnoremap <Esc> <C-W>N
+
 " for blueyed/vim-diminactive
 " let g:diminactive_enable_focus = 0
 
 " for NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
+
+map <C-j> :bp<CR>
+map <C-k> :bn<CR>
+map <C-t> :vs \| :term ++curwin <CR>
 
 syntax enable
 filetype indent on
@@ -72,3 +78,6 @@ set clipboard=unnamed
 set smartindent
 set cindent
 highlight Comment term=bold cterm=bold ctermfg=4
+
+set encoding=utf-8
+set fileencodings=utf-8,cp949
