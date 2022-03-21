@@ -9,7 +9,7 @@ echo "***************************"
 echo "Install Pacakge"
 echo "***************************"
 apt-get install -y \
-	vim \
+    vim \
     tmux \
     wget \
     apt-transport-https \
@@ -22,7 +22,8 @@ apt-get install -y \
     python3 \
     python-pip \
     cmake \
-	build-essential
+    build-essential \
+    bear
 
 apt-get install -y net-tools less 
 echo "***************************"
@@ -65,6 +66,7 @@ echo "***************************"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp .vimrc ~/.vimrc
 vim +PluginInstall +qall
+vim -c "CocInstall clangd"
 
 #Docker 
 #git clone https://github.com/docker/docker-install.git;
