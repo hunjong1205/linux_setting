@@ -67,9 +67,9 @@ bindkey "^K" forward-char" >> ~/.zshrc
 echo "***************************"
 echo "Configure Vim"
 echo "***************************"
-curl -sL install-node.vercel.app/lts | bash
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp .vimrc ~/.vimrc
+curl -sL install-node.vercel.app/lts | bash
 vim +PluginInstall +qall
 vim -c "CocInstall clangd"
 
