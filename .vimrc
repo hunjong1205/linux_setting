@@ -34,7 +34,7 @@ set t_Co=256
 " colorscheme desert
 set background=dark
 " colorscheme jellybeans
-" colorscheme pulumi
+colorscheme pulumi
 " for taglist
 nmap <C-m> :Tagbar<CR>
 
