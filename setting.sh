@@ -9,7 +9,7 @@ echo "***************************"
 echo "Install Pacakge"
 echo "***************************"
 sudo apt-get install -y \
-	vim \
+    vim \
     tmux \
     wget \
     apt-transport-https \
@@ -21,7 +21,8 @@ sudo apt-get install -y \
     tmux \
     python3 \
     python-pip \
-	build-essential
+    build-essential \
+    bear
 
 sudo apt-get install -y net-tools less 
 echo "***************************"
