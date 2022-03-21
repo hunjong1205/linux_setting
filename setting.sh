@@ -3,6 +3,8 @@
 # Make Domain Name Service
 # echo "163.152.162.75	kuserver" >> /etc/hosts   
 
+# Upgrade Vim version > 8.2
+sudo add-apt-repository ppa:jonathonf/vim
 sudo apt-get update && sudo apt-get upgrade
 
 echo "***************************"
