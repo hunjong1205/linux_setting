@@ -15,13 +15,18 @@ Plugin 'vim-airline/vim-airline' " vim status bar
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'blueyed/vim-diminactive'
 
+Plugin 'hynek/vim-python-pep8-indent'
+filetype plugin indent on 
+
 call vundle#end()
 
-"call plug#begin('~/.vim/autoload/plug')
+call plug#begin('~/.vim/autoload/plug')
 
-"Plug 'pgavlin/pulumi.vim'
+Plug 'pgavlin/pulumi.vim'
 
-"call plug#end()
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+call plug#end()
 
 set t_Co=256
 
