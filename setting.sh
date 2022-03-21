@@ -68,9 +68,12 @@ echo "***************************"
 echo "Configure Vim"
 echo "***************************"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp .vimrc ~/.vimrc
 curl -sL install-node.vercel.app/lts | bash
 vim +PluginInstall +qall
+vim +PlugInsatll +qall
 vim -c "CocInstall clangd"
 
 #Docker 
