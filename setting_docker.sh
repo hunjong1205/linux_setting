@@ -59,7 +59,7 @@ alias lt='ls -lt'
 alias ta='tmux attach'
 alias td='tmux detach'
 # Auto Suggestion accpet key binding
-bindkey '!' autosuggest-accept " >> ~/.zshrc
+bindkey '!' autosuggest-accept
 bindkey "^L" forward-word
 bindkey "^H" backward-word
 bindkey "^J" backward-char
