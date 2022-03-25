@@ -23,6 +23,7 @@ sudo apt-get install -y \
     tmux \
     python3 \
     python-pip \
+	cmake \
     build-essential \
     bear
 
@@ -75,7 +76,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 cp .vimrc ~/.vimrc
 curl -sL install-node.vercel.app/lts | bash
 vim +PluginInstall +qall
-vim +PlugInsatll +qall
+vim +PlugInstall +qall
 vim -c "CocInstall coc-clangd"
 
 #Docker 

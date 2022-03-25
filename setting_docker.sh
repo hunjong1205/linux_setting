@@ -60,6 +60,10 @@ alias ta='tmux attach'
 alias td='tmux detach'
 # Auto Suggestion accpet key binding
 bindkey '!' autosuggest-accept " >> ~/.zshrc
+bindkey "^L" forward-word
+bindkey "^H" backward-word
+bindkey "^J" backward-char
+bindkey "^K" forward-char" >> ~/.zshrc
 
 # Configure Vim"
 echo "***************************"
