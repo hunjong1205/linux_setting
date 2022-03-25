@@ -24,6 +24,7 @@ apt-get install -y \
     cmake \
     build-essential \
     bear \
+    ctags \
     software-properties-common
 
 # Upgrade Vim version > 8.2
