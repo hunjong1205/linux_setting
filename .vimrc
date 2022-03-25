@@ -15,8 +15,18 @@ Plugin 'vim-airline/vim-airline' " vim status bar
 Plugin 'vim-airline/vim-airline-themes'
 " Plugin 'blueyed/vim-diminactive'
 
-Plugin 'hynek/vim-python-pep8-indent'
-filetype plugin indent on 
+" For Jedi-vim check https://github.com/davidhalter/jedi-vim
+" Plugin 'davidhalter/jedi-vim'   
+" let g:jedi#show_call_signatures=1       
+" let g:jedi#popup_select_first="0"
+" let g:jedi#force_py_version=3           
+
+Plugin 'hynek/vim-python-pep8-indent'   
+filetype plugin indent on               
+
+Plugin 'nvie/vim-flake8'                
+" let g:syntastic_python_checkers=['flake8']        
+" let g:syntastic_python_flake8_args='--ignore='    
 
 call vundle#end()
 
@@ -32,7 +42,8 @@ set t_Co=256
 
 " for jellybeans
 " colorscheme desert
-set background=dark
+" set background=dark
+set background=light
 " colorscheme jellybeans
 colorscheme pulumi
 " for taglist
@@ -46,7 +57,10 @@ let g:indentguides_tabchar = '|'
 " let g:indent_guides_guide_size=1
 
 " for vim-airline
-let g:airline#extensions#tabline#enabled = 1 " turn on buffer list
+let g:airline#extensions#tabline#enabled = 1					" vim-airline 버퍼 목록 켜기
+let g:airline#extensions#tabline#fnamemod = ':t'				" vim-airline 버퍼 목록 파일명만 출력
+let g:airline#extensions#tabline#buffer_nr_show = 1				" vim-airline buffer number 보이기
+let g:airline#extensions#tabline#buffer_nr_format = '%s:'		" vim-airline buffer number format
 " let g:airline_theme='hybrid'
 set laststatus=2 " turn on bottom bar
 let mapleader = ","
@@ -64,6 +78,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 map <C-j> :bp<CR>
 map <C-k> :bn<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <C-l> :tabnext<CR>
 map <C-t> :vs \| :term ++curwin <CR>
 
 syntax enable
@@ -83,9 +99,6 @@ set clipboard=unnamed
 set smartindent
 set cindent
 highlight Comment term=bold cterm=bold ctermfg=4
-
-set encoding=utf-8
-set fileencodings=utf-8,cp949
 
 set encoding=utf-8
 set fileencodings=utf-8,cp949
