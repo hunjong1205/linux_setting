@@ -43,7 +43,7 @@ git config --global user.name "hunjong"
 echo "***************************"
 echo "Install Zsh"
 echo "***************************"
-sudo apt-get install -y zsh
+sudo apt-get install zsh
 
 chsh -s $(which zsh) hunjong
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
