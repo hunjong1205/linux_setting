@@ -3,8 +3,6 @@
 # Make Domain Name Service
 # echo "163.152.162.75	kuserver" >> /etc/hosts   
 
-# Upgrade Vim version > 8.2
-add-apt-repository ppa:jonathonf/vim
 apt-get update && apt-get upgrade
 
 echo "***************************"
@@ -25,7 +23,13 @@ apt-get install -y \
     python-pip \
     cmake \
     build-essential \
-    bear
+    bear \
+    software-properties-common
+
+# Upgrade Vim version > 8.2
+add-apt-repository -y ppa:jonathonf/vim
+apt-get update
+apt-get upgrade vim
 
 apt-get install -y net-tools less 
 echo "***************************"
