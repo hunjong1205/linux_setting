@@ -6,7 +6,9 @@
 apt-get update && apt-get upgrade
 
 echo "***************************"
+echo "***************************"
 echo "Install Pacakge"
+echo "***************************"
 echo "***************************"
 apt-get install -y \
     vim \
@@ -34,7 +36,9 @@ apt-get upgrade -y vim
 
 apt-get install -y net-tools less 
 echo "***************************"
+echo "***************************"
 echo "Install Package Done!"
+echo "***************************"
 echo "***************************"
 
 #git settings
@@ -46,7 +50,9 @@ git config --global user.name "hunjong[docker]"
 
 # Install Zsh
 echo "***************************"
+echo "***************************"
 echo "Install Zsh"
+echo "***************************"
 echo "***************************"
 apt-get install zsh
 
@@ -81,7 +87,7 @@ cp .vimrc ~/.vimrc
 curl -sL install-node.vercel.app/lts | bash
 vim +PluginInstall +qall
 vim +PlugInstall +qall
-vim -c "CocInstall coc-clangd"
+vim -c "CocInstall coc-clangd" &
 
 
 #Docker 
@@ -91,8 +97,10 @@ vim -c "CocInstall coc-clangd"
 #rm -rf ../docker-install;
 
 echo "***************************"
+echo "***************************"
 echo "Configuration Initial Linux Done"
 echo "***************************"
 echo "Restart zsh"
+echo "***************************"
 echo "***************************"
 

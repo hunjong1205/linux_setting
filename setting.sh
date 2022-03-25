@@ -3,12 +3,12 @@
 # Make Domain Name Service
 # echo "163.152.162.75	kuserver" >> /etc/hosts   
 
-# Upgrade Vim version > 8.2
-sudo add-apt-repository ppa:jonathonf/vim
 sudo apt-get update && sudo apt-get upgrade
 
 echo "***************************"
+echo "***************************"
 echo "Install Pacakge"
+echo "***************************"
 echo "***************************"
 sudo apt-get install -y \
     vim \
@@ -25,11 +25,20 @@ sudo apt-get install -y \
     python-pip \
 	cmake \
     build-essential \
-    bear
+    bear \
+	ctags \
+	software-properties-common
+
+# Upgrade Vim version > 8.2
+sudo add-apt-repository -y ppa:jonathonf/vim
+sudo apt-get update -y
+sudo apt-get upgrade -y vim
 
 sudo apt-get install -y net-tools less 
 echo "***************************"
+echo "***************************"
 echo "Install Package Done!"
+echo "***************************"
 echo "***************************"
 
 #git settings
@@ -41,7 +50,9 @@ git config --global user.name "hunjong"
 
 # Install Zsh
 echo "***************************"
+echo "***************************"
 echo "Install Zsh"
+echo "***************************"
 echo "***************************"
 sudo apt-get install zsh
 
@@ -77,7 +88,7 @@ cp .vimrc ~/.vimrc
 curl -sL install-node.vercel.app/lts | bash
 vim +PluginInstall +qall
 vim +PlugInstall +qall
-vim -c "CocInstall coc-clangd"
+vim -c "CocInstall coc-clangd" &
 
 #Docker 
 #git clone https://github.com/docker/docker-install.git;
@@ -86,9 +97,11 @@ vim -c "CocInstall coc-clangd"
 #rm -rf ../docker-install;
 
 echo "***************************"
+echo "***************************"
 echo "Configuration Initial Linux Done"
 echo "***************************"
 echo "Restart zsh"
+echo "***************************"
 echo "***************************"
 
 exec zsh
