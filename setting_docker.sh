@@ -28,8 +28,8 @@ apt-get install -y \
 
 # Upgrade Vim version > 8.2
 add-apt-repository -y ppa:jonathonf/vim
-apt-get update
-apt-get upgrade vim
+apt-get update -y
+apt-get upgrade -y vim
 
 apt-get install -y net-tools less 
 echo "***************************"
