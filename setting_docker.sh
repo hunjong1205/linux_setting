@@ -87,7 +87,7 @@ cp .vimrc ~/.vimrc
 curl -sL install-node.vercel.app/lts | zsh
 vim +PluginInstall +qall
 vim +PlugInstall +qall
-vim -c "CocInstall coc-clangd"
+vim -c "CocInstall coc-clangd coc-pyright coc-tsserver"
 
 
 #Docker 
