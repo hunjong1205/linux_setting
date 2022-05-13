@@ -62,7 +62,7 @@ echo "***************************"
 echo "Install Zsh"
 echo "***************************"
 echo "***************************"
-$var apt-get install zsh
+$var apt-get install -y zsh
 
 chsh -s $(which zsh) hunjong
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
