@@ -13,6 +13,7 @@ Plugin 'airblade/vim-gitgutter' " vim with git status(added, modified, and remov
 Plugin 'tpope/vim-fugitive' " vim with git command(e.g., Gdiff)
 Plugin 'vim-airline/vim-airline' " vim status bar
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'haya14busa/vim-easymotion'
 " Plugin 'blueyed/vim-diminactive'
 
 " For Jedi-vim check https://github.com/davidhalter/jedi-vim
@@ -36,18 +37,35 @@ Plug 'pgavlin/pulumi.vim'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'arcticicestudio/nord-vim'
+
+Plug 'jacoborus/tender.vim'
+
+Plug 'puremourning/vimspector'
+
 call plug#end()
 
 set t_Co=256
 
-" for jellybeans
+syntax enable
 " colorscheme desert
 " set background=dark
-set background=light
+" set background=light
 " colorscheme jellybeans
-colorscheme pulumi
+" colorscheme pulumi
+" colorscheme nord
+colorscheme tender
 " for taglist
 nmap <C-m> :Tagbar<CR>
+
+" for colorscheme
+" let g:nord_underline = 1
+let g:lightline = { 'colorscheme': 'tender' }
+let g:airline_theme = 'tender'
+
+" for Vimspector
+let g:vimspector_enable_mapping = 'HUMAN'
+packadd! vimspector
 
 " for indent guide
 let g:indentguides_spacechar = '┆'
@@ -57,6 +75,7 @@ let g:indentguides_tabchar = '|'
 " let g:indent_guides_guide_size=1
 
 " for vim-airline
+let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1					" vim-airline 버퍼 목록 켜기
 let g:airline#extensions#tabline#fnamemod = ':t'				" vim-airline 버퍼 목록 파일명만 출력
 let g:airline#extensions#tabline#buffer_nr_show = 1				" vim-airline buffer number 보이기
@@ -65,8 +84,8 @@ let g:airline#extensions#tabline#buffer_nr_format = '%s:'		" vim-airline buffer 
 set laststatus=2 " turn on bottom bar
 let mapleader = ","
 
-nnoremap <C><PageUp> :bp<CR>
-nnoremap <C><PageDown> :bn<CR>
+" for Easy-motion
+map <Leader> <Plug>(easymotion-prefix)
 
 tnoremap <Esc> <C-W>N
 
@@ -98,7 +117,7 @@ set cursorline
 set clipboard=unnamed
 set smartindent
 set cindent
-highlight Comment term=bold cterm=bold ctermfg=4
+hi search term=reverse ctermfg=0 ctermbg=2 guifg=#3B4252 guibg=#88C0D0
 
 set encoding=utf-8
 set fileencodings=utf-8,cp949
@@ -130,16 +149,32 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ <SID>check_back_space() ? "\<TAB>" :
+"      \ coc#refresh()
+
 
 function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+inoremap <silent><expr> <TAB>
+\ coc#pum#visible() ? coc#_select_confirm() :
+\ coc#expandableOrJumpable() ?
+\ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ coc#refresh()
+
+function! s:check_back_space() abort
+let col = col('.') - 1
+return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -149,9 +184,8 @@ else
 endif
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#_select_confirm()
+				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
