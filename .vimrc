@@ -41,6 +41,8 @@ Plug 'arcticicestudio/nord-vim'
 
 Plug 'jacoborus/tender.vim'
 
+Plug 'tomasiser/vim-code-dark'
+
 Plug 'puremourning/vimspector'
 
 call plug#end()
@@ -54,9 +56,7 @@ syntax enable
 " colorscheme jellybeans
 " colorscheme pulumi
 " colorscheme nord
-colorscheme tender
-" for taglist
-nmap <C-m> :Tagbar<CR>
+" colorscheme tender
 
 " for colorscheme
 " let g:nord_underline = 1
@@ -124,8 +124,8 @@ let g:vimspector_configurations = {
 
 
 " for Easy-motion
-nnoremap f <Plug>(easymotion-bd-w)
-nnoremap F <Plug>(easymotion-b)
+nnoremap F <Plug>(easymotion-bd-w)
+" nnoremap F <Plug>(easymotion-b)
 
 tnoremap <Esc> <C-W>N
 
@@ -157,6 +157,7 @@ set cursorline
 set clipboard=unnamed
 set smartindent
 set cindent
+set autoread
 hi search term=reverse ctermfg=0 ctermbg=2 guifg=#3B4252 guibg=#88C0D0
 
 set encoding=utf-8
@@ -176,6 +177,13 @@ set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
+
+set t_Co=256
+set t_ut=
+let g:airline_theme = 'codedark'
+colorscheme codedark
+" for taglist
+nmap <C-m> :Tagbar<CR>
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
